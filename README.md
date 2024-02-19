@@ -3,8 +3,8 @@
 
 ## Download dependencies
 ```sh
-npm i
+1.npm i
 ```
 ## construct npm
-构建npm
+2.构建npm
 

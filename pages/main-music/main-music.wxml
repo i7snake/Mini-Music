@@ -1,0 +1,55 @@
+<!--pages/main-music/main-music.wxml-->
+
+<!-- 搜索框 -->
+<van-search shape="round" placeholder="请输入搜索关键词" bind:click-input="onSearch"></van-search>
+
+<!-- 轮播图 -->
+<swiper class="banner" style="height:{{swiperH}}px;" wx:if="{{banner.length}}" indicator-active-color="#07c160" indicator-dots circular autoplay>
+  <block wx:for="{{banner}}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="banner-image" src="{{item.imageUrl}}" mode="widthFix" bindload="onImageLoad" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 推荐歌曲展示 -->
+<view class="recommend" wx:if="{{recommendSong.length}}">
+  <area-header title="推荐歌曲" bind:onMoreItem="onRecommendMoreClick"></area-header>
+  <view class="list">
+    <block wx:for="{{recommendSong}}" wx:key="id">
+      <song-item-v1 itemData="{{item}}" data-index="{{index}}" bind:tap="onSongItmeTap"></song-item-v1>
+    </block>
+  </view>
+</view>
+
+<!-- 两个歌单 -->
+<menu-area title="热门歌单" MenuList="{{hotMenuList}}"></menu-area>
+<menu-area title="推荐歌单-'华语'" MenuList="{{recommendMenuList}}"></menu-area>
+
+<!-- 排行榜 -->
+<view class="ranking" wx:if="{{isRanking}}">
+  <area-header title="排行榜" hasMore="{{false}}"></area-header>
+  <view class="ranking-list">
+    <block wx:for="{{rankingSongmenu}}" wx:key="id">
+      <ranking-item itemData="{{item}}" key="{{index}}"></ranking-item>
+    </block>
+  </view>
+</view>
+
+<!-- 播放工具栏 -->
+<view class="play-bar-placeholder" wx:if="{{currentSong.name || isPlaying}}"></view>
+<view class="play-bar" wx:if="{{currentSong.name || isPlaying}}">
+  <view class="left">
+    <image class="album album-anim" 
+    style="animation-play-state:{{isPlaying ? 'running': 'paused'}};" 
+    bind:tap="onPlaySong"
+    src="{{currentSong.al.picUrl}}" mode="" />
+    <view class="name">{{currentSong.name}}</view>
+  </view>
+  <view class="right">
+    <image class="play" 
+    src="/assets/images/music/{{isPlaying ? 'pause': 'play'}}_icon.png"
+    bind:tap="onPlayStatus"/>
+    <image class="icon" src="/assets/images/music/playlist_icon.png" mode="" />
+  </view>
+</view>

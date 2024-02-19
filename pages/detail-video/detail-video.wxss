@@ -1,0 +1,33 @@
+/* pages/detail-video/detail-video.wxss */
+page {
+  height: 100vh;
+  background-color:#07c160;
+}
+.video {
+  width: 100%;
+}
+.scrollV {
+  height: calc(100% - 255px);
+}
+.info {
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+}
+.info .img {
+  width:100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.info .name {
+    margin-left: 20rpx;
+}
+.info .name .top {
+  color: #fff;
+  font-weight: 700;
+}
+.info .name .bottom {
+  margin-top: 10rpx;
+  color: #666;
+  font-size: 25rpx;
+}

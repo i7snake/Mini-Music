@@ -1,0 +1,4 @@
+/**app.wxss**/
+.topicColor {
+  color: #07c160;
+}

@@ -1,0 +1,14 @@
+<!--pages/detail-video/detail-video.wxml-->
+<video class="video" src="{{mvUrl}}" referrer-policy="origin" autoplay> </video>
+
+<scroll-view class="scrollV" scroll-y>
+  <view class="info">
+    <image class="img" src="{{mvDetail.cover}}" mode="" />
+    <view class="name">
+      <view class="top">歌曲: {{mvDetail.artistName}}-{{mvDetail.name}}</view>
+      <view class="bottom"> 发布时间:
+        {{mvDetail.publishTime}}
+      </view>
+    </view>
+  </view>
+</scroll-view>

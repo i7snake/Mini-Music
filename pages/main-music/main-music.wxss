@@ -1,0 +1,73 @@
+/* pages/main-music/main-music.wxss */
+page {
+  box-sizing: border-box;
+  padding: 0 24rpx;
+}
+.banner {
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+.banner-image {
+  width: 100%;
+}
+
+/* 播放栏工具 */
+.play-bar-placeholder {
+  /* 占位 */
+  height: 50px;
+}
+.play-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 8px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+}
+
+.play-bar .left, .play-bar .right {
+  display: flex;
+  align-items: center;
+}
+.play-bar .left .album {
+  position: relative;
+  top: -8px;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.play-bar .left .name {
+  font-size: 14px;
+  margin-left: 10rpx;
+}
+
+.play-bar .right .play {
+  width: 25px;
+  height: 25px;
+  margin-right: 10rpx;
+}
+.play-bar .right .icon {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes rotateAnim {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.album-anim {
+  animation: rotateAnim 10s linear infinite;
+}

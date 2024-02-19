@@ -1,0 +1,28 @@
+/* components/song-item-v1/song-item-v1.wxss */
+
+.song-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.song-item .songName {
+  display: flex;
+  align-items: center;
+}
+.song-item .songName .image {
+  width:140rpx ;
+  border-radius: 20rpx;
+}
+.song-item .songName .info {
+  margin-left: 20rpx;
+}
+.song-item .songName .info .name {
+  font-size: 32rpx;
+  margin-bottom: 16rpx;
+  color: #555;
+}
+.song-item .songName .info .author {
+  font-size: 24rpx;
+  color: #999;
+}
